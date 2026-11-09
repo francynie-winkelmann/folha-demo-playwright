@@ -94,7 +94,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chromium
-      - name: Medir detecção (rápido: para na primeira falha de cada defeito)
+      - name: "Medir detecção (modo rápido, para na primeira falha de cada defeito)"
         run: npm run defeitos:medir
         env:
           MEDICAO_RAPIDA: '1'
