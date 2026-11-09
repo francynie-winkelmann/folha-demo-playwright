@@ -47,7 +47,7 @@ jobs:
           cat docs/qualidade/rastreabilidade.md >> "$GITHUB_STEP_SUMMARY"
       - name: Guardar relatório HTML, rastreabilidade e evidência
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: relatorio-e-evidencias
           path: |
@@ -75,7 +75,7 @@ jobs:
         run: npm run mutacao
       - name: Guardar relatório de mutação
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: relatorio-de-mutacao
           path: reports/mutacao/
@@ -103,7 +103,7 @@ jobs:
         run: cat docs/qualidade/deteccao.md >> "$GITHUB_STEP_SUMMARY"
       - name: Guardar o relatório de detecção
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: deteccao-de-defeitos
           path: docs/qualidade/
