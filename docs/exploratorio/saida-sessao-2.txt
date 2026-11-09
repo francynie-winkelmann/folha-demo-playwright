@@ -1,0 +1,33 @@
+== Estrutura da página ==
+{"lang":"pt-BR","titulo":"FolhaDemo — app fictício para demonstração de QA","h1":1,"main":1,"tablist":1,"tabs":2,"tabpanel":0,"abaComAriaControls":0,"inputsSemRotulo":0}
+
+== Ordem do Tab, aba "Folha mensal" ==
+1. <button role=tab> "Folha mensal" [contorno visível]
+2. <button role=tab> "Rescisão" [contorno visível]
+3. <input> "Nome completo" [contorno visível]
+4. <input> "CPF" [contorno visível]
+5. <input> "Salário bruto (R$)" [contorno visível]
+6. <input> "Data de admissão" [contorno visível]
+7. <input> "Data de admissão" [contorno visível]
+8. <input> "Data de admissão" [contorno visível]
+9. <input> "Data de admissão" [SEM indicador de foco]
+10. <input> "Dependentes (IRRF)" [contorno visível]
+
+== Setas na lista de abas ==
+Após ArrowRight, foco em: <button role=tab> "Folha mensal" [contorno visível] | aba Rescisão selecionada? false
+Após End, foco em: <button role=tab> "Folha mensal" [contorno visível]
+
+== Enter e Espaço na aba Rescisão ==
+Enter ativou a aba? true
+
+== Envio do formulário só com o teclado (Rescisão) ==
+Foco após enviar vazio: <button> "Calcular rescisão" [contorno visível]
+Alertas na tela: 6 -> Escolha o tipo de desligamento. | Informe o salário. | Informe o número de dependentes (use 0 se não houver). | Informe a data de admissão. | Informe a data de desligamento. | Informe o saldo do FGTS (use 0 se não houver).
+{"camposComAriaInvalid":6,"camposComAriaDescribedby":6,"regiaoAoVivo":0}
+
+== Resultado após cálculo válido ==
+Foco após calcular: <button> "Calcular rescisão" [SEM indicador de foco]
+{"resultadoEmRegiaoNomeada":true,"resultadoComAriaLive":false,"tabelaOuListaDeDefinicao":5}
+
+== Zoom 200% (viewport 550px) ==
+{"rolagemHorizontal":false}

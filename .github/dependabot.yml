@@ -1,0 +1,16 @@
+# Mantém dependências e ações do GitHub atualizadas por pull requests semanais,
+# para que correções de segurança cheguem sem depender de lembrança.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      desenvolvimento:
+        dependency-type: development
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

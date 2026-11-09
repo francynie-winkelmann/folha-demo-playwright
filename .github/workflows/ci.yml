@@ -1,0 +1,123 @@
+name: Testes
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Permissões mínimas: o fluxo só precisa ler o código.
+permissions:
+  contents: read
+
+jobs:
+  testes:
+    name: Suíte Playwright
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Testes unitários da regra de negócio (rápidos, sem navegador)
+        run: npm run test:unit
+      - name: Testes de tela e do resultado esperado (Playwright)
+        run: npm test
+        env:
+          CI: 'true'
+      - name: Cenários BDD (Gherkin em português)
+        run: npm run test:bdd
+        env:
+          CI: 'true'
+      - name: Regressão antes × depois da folha mensal (falha se houver diferença inesperada)
+        run: npm run regressao
+      - name: Matriz de rastreabilidade (falha se houver regra sem teste)
+        run: npm run rastreabilidade
+      - name: Evidência da execução (commit, versões, resultado, impressões digitais)
+        if: always()
+        run: npm run evidencia
+      - name: Resumo na página da execução
+        if: always()
+        run: |
+          cat docs/qualidade/evidencia.md >> "$GITHUB_STEP_SUMMARY"
+          cat docs/qualidade/regressao.md >> "$GITHUB_STEP_SUMMARY"
+          cat docs/qualidade/rastreabilidade.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Guardar relatório HTML, rastreabilidade e evidência
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-e-evidencias
+          path: |
+            playwright-report/
+            reports/resultados.json
+            reports/resultados-bdd.json
+            reports/evidencia/
+            docs/qualidade/rastreabilidade.*
+            docs/qualidade/regressao.*
+            docs/qualidade/evidencia.md
+          retention-days: 30
+
+  mutacao:
+    name: Teste de mutação (Stryker)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Rodar mutação (falha se a nota ficar abaixo do mínimo de 70%)
+        run: npm run mutacao
+      - name: Guardar relatório de mutação
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-de-mutacao
+          path: reports/mutacao/
+          retention-days: 30
+
+  deteccao-de-defeitos:
+    name: Taxa de detecção dos defeitos plantados
+    runs-on: ubuntu-latest
+    needs: testes
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Medir detecção (rápido: para na primeira falha de cada defeito)
+        run: npm run defeitos:medir
+        env:
+          MEDICAO_RAPIDA: '1'
+      - name: Resumo na página da execução
+        if: always()
+        run: cat docs/qualidade/deteccao.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Guardar o relatório de detecção
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deteccao-de-defeitos
+          path: docs/qualidade/
+          retention-days: 30
+
+  dependencias:
+    name: Vulnerabilidades conhecidas nas dependências
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm audit --audit-level=high

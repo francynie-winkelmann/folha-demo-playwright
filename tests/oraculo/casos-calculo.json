@@ -1,0 +1,651 @@
+{
+  "_aviso": "Arquivo GERADO por scripts/gerar-casos.ts com a calculadora independente. Não edite os valores à mão. Valores em centavos.",
+  "versao_tabelas": "2026-01",
+  "gerado_por": "tests/oraculo/calculadora-independente.ts",
+  "casos": [
+    {
+      "id": "c01",
+      "regra": "RN-INSS-01",
+      "risco": "Desconto de INSS diferente do devido (progressividade)",
+      "descricao": "Salário exatamente no limite da 1ª faixa do INSS",
+      "entrada": {
+        "salario": "1621,00",
+        "salarioCentavos": 162100,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 12158,
+        "baseIrrf": 101380,
+        "irrfTabela": 0,
+        "reducao": 0,
+        "irrf": 0,
+        "fgts": 12968,
+        "liquido": 149942
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c02",
+      "regra": "RN-INSS-01",
+      "risco": "Desconto de INSS diferente do devido (progressividade)",
+      "descricao": "Salário 1 centavo acima do limite da 1ª faixa",
+      "entrada": {
+        "salario": "1621,01",
+        "salarioCentavos": 162101,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 12158,
+        "baseIrrf": 101381,
+        "irrfTabela": 0,
+        "reducao": 0,
+        "irrf": 0,
+        "fgts": 12968,
+        "liquido": 149943
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c03",
+      "regra": "RN-INSS-01",
+      "risco": "Desconto de INSS diferente do devido (progressividade)",
+      "descricao": "Salário exatamente no limite da 2ª faixa",
+      "entrada": {
+        "salario": "2902,84",
+        "salarioCentavos": 290284,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 23694,
+        "baseIrrf": 229564,
+        "irrfTabela": 0,
+        "reducao": 0,
+        "irrf": 0,
+        "fgts": 23223,
+        "liquido": 266590
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c04",
+      "regra": "RN-INSS-01",
+      "risco": "Desconto de INSS diferente do devido (progressividade)",
+      "descricao": "Salário 1 centavo acima do limite da 2ª faixa",
+      "entrada": {
+        "salario": "2902,85",
+        "salarioCentavos": 290285,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 23694,
+        "baseIrrf": 229565,
+        "irrfTabela": 0,
+        "reducao": 0,
+        "irrf": 0,
+        "fgts": 23223,
+        "liquido": 266591
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c05",
+      "regra": "RN-INSS-01",
+      "risco": "Desconto de INSS diferente do devido (progressividade)",
+      "descricao": "Salário exatamente no limite da 3ª faixa",
+      "entrada": {
+        "salario": "4354,27",
+        "salarioCentavos": 435427,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 41111,
+        "baseIrrf": 374707,
+        "irrfTabela": 16790,
+        "reducao": 16790,
+        "irrf": 0,
+        "fgts": 34834,
+        "liquido": 394316
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c06",
+      "regra": "RN-INSS-01",
+      "risco": "Desconto de INSS diferente do devido (progressividade)",
+      "descricao": "Salário 1 centavo acima do limite da 3ª faixa",
+      "entrada": {
+        "salario": "4354,28",
+        "salarioCentavos": 435428,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 41111,
+        "baseIrrf": 374708,
+        "irrfTabela": 16790,
+        "reducao": 16790,
+        "irrf": 0,
+        "fgts": 34834,
+        "liquido": 394317
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c07",
+      "regra": "RN-INSS-02",
+      "risco": "INSS acima do máximo legal",
+      "descricao": "Salário exatamente no teto do INSS",
+      "entrada": {
+        "salario": "8475,55",
+        "salarioCentavos": 847555,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 98809,
+        "baseIrrf": 748746,
+        "irrfTabela": 115032,
+        "reducao": 0,
+        "irrf": 115032,
+        "fgts": 67804,
+        "liquido": 633714
+      },
+      "amostra_conferencia": true,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c08",
+      "regra": "RN-INSS-02",
+      "risco": "INSS acima do máximo legal",
+      "descricao": "Salário 1 centavo acima do teto do INSS",
+      "entrada": {
+        "salario": "8475,56",
+        "salarioCentavos": 847556,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 98809,
+        "baseIrrf": 748747,
+        "irrfTabela": 115032,
+        "reducao": 0,
+        "irrf": 115032,
+        "fgts": 67804,
+        "liquido": 633715
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c09",
+      "regra": "RN-INSS-02",
+      "risco": "INSS acima do máximo legal",
+      "descricao": "Salário bem acima do teto (R$ 15.000,00)",
+      "entrada": {
+        "salario": "15000,00",
+        "salarioCentavos": 1500000,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 98809,
+        "baseIrrf": 1401191,
+        "irrfTabela": 294455,
+        "reducao": 0,
+        "irrf": 294455,
+        "fgts": 120000,
+        "liquido": 1106736
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c10",
+      "regra": "RN-IRRF-02",
+      "risco": "IRRF calculado sobre base errada",
+      "descricao": "Desconto simplificado maior que INSS + dependentes",
+      "entrada": {
+        "salario": "2000,00",
+        "salarioCentavos": 200000,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 15569,
+        "baseIrrf": 139280,
+        "irrfTabela": 0,
+        "reducao": 0,
+        "irrf": 0,
+        "fgts": 16000,
+        "liquido": 184431
+      },
+      "amostra_conferencia": true,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c11",
+      "regra": "RN-IRRF-01",
+      "risco": "IRRF calculado sobre base errada",
+      "descricao": "INSS + 2 dependentes (R$ 3.000,00)",
+      "entrada": {
+        "salario": "3000,00",
+        "salarioCentavos": 300000,
+        "dependentes": 2
+      },
+      "esperado": {
+        "inss": 24860,
+        "baseIrrf": 237222,
+        "irrfTabela": 0,
+        "reducao": 0,
+        "irrf": 0,
+        "fgts": 24000,
+        "liquido": 275140
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c12",
+      "regra": "RN-IRRF-03",
+      "risco": "Retenção indevida de IRRF (redutor da Lei 15.270/2025)",
+      "descricao": "Salário exatamente no limite da isenção (R$ 5.000,00)",
+      "entrada": {
+        "salario": "5000,00",
+        "salarioCentavos": 500000,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 50151,
+        "baseIrrf": 439280,
+        "irrfTabela": 31289,
+        "reducao": 31289,
+        "irrf": 0,
+        "fgts": 40000,
+        "liquido": 449849
+      },
+      "amostra_conferencia": true,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c13",
+      "regra": "RN-IRRF-03",
+      "risco": "Retenção indevida de IRRF (redutor da Lei 15.270/2025)",
+      "descricao": "Salário 1 centavo acima do limite da isenção",
+      "entrada": {
+        "salario": "5000,01",
+        "salarioCentavos": 500001,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 50152,
+        "baseIrrf": 439281,
+        "irrfTabela": 31289,
+        "reducao": 31289,
+        "irrf": 0,
+        "fgts": 40000,
+        "liquido": 449849
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c14",
+      "regra": "RN-IRRF-03",
+      "risco": "Retenção indevida de IRRF (redutor da Lei 15.270/2025)",
+      "descricao": "Redução parcial por fórmula (R$ 6.000,00)",
+      "entrada": {
+        "salario": "6000,00",
+        "salarioCentavos": 600000,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 64151,
+        "baseIrrf": 535849,
+        "irrfTabela": 56485,
+        "reducao": 17975,
+        "irrf": 38510,
+        "fgts": 48000,
+        "liquido": 497339
+      },
+      "amostra_conferencia": true,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c15",
+      "regra": "RN-IRRF-01",
+      "risco": "IRRF calculado sobre base errada",
+      "descricao": "Redução parcial com 2 dependentes (R$ 6.000,00)",
+      "entrada": {
+        "salario": "6000,00",
+        "salarioCentavos": 600000,
+        "dependentes": 2
+      },
+      "esperado": {
+        "inss": 64151,
+        "baseIrrf": 497931,
+        "irrfTabela": 46058,
+        "reducao": 17975,
+        "irrf": 28083,
+        "fgts": 48000,
+        "liquido": 507766
+      },
+      "amostra_conferencia": true,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c16",
+      "regra": "RN-IRRF-03",
+      "risco": "Retenção indevida de IRRF (redutor da Lei 15.270/2025)",
+      "descricao": "Salário no fim do redutor (R$ 7.350,00)",
+      "entrada": {
+        "salario": "7350,00",
+        "salarioCentavos": 735000,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 83051,
+        "baseIrrf": 651949,
+        "irrfTabela": 88413,
+        "reducao": 0,
+        "irrf": 88413,
+        "fgts": 58800,
+        "liquido": 563536
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c17",
+      "regra": "RN-IRRF-03",
+      "risco": "Retenção indevida de IRRF (redutor da Lei 15.270/2025)",
+      "descricao": "Salário logo acima do fim do redutor (R$ 7.350,01)",
+      "entrada": {
+        "salario": "7350,01",
+        "salarioCentavos": 735001,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 83052,
+        "baseIrrf": 651949,
+        "irrfTabela": 88413,
+        "reducao": 0,
+        "irrf": 88413,
+        "fgts": 58800,
+        "liquido": 563536
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c18",
+      "regra": "RN-IRRF-01",
+      "risco": "IRRF calculado sobre base errada",
+      "descricao": "Isenção total com 1 dependente (R$ 4.500,00)",
+      "entrada": {
+        "salario": "4500,00",
+        "salarioCentavos": 450000,
+        "dependentes": 1
+      },
+      "esperado": {
+        "inss": 43151,
+        "baseIrrf": 387890,
+        "irrfTabela": 19726,
+        "reducao": 19726,
+        "irrf": 0,
+        "fgts": 36000,
+        "liquido": 406849
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c19",
+      "regra": "RN-IRRF-01",
+      "risco": "IRRF calculado sobre base errada",
+      "descricao": "Redução parcial com 3 dependentes (R$ 5.500,00)",
+      "entrada": {
+        "salario": "5500,00",
+        "salarioCentavos": 550000,
+        "dependentes": 3
+      },
+      "esperado": {
+        "inss": 57151,
+        "baseIrrf": 435972,
+        "irrfTabela": 30545,
+        "reducao": 24632,
+        "irrf": 5913,
+        "fgts": 44000,
+        "liquido": 486936
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c20",
+      "regra": "RN-IRRF-01",
+      "risco": "IRRF calculado sobre base errada",
+      "descricao": "Máximo de dependentes (10) com salário baixo",
+      "entrada": {
+        "salario": "1621,00",
+        "salarioCentavos": 162100,
+        "dependentes": 10
+      },
+      "esperado": {
+        "inss": 12158,
+        "baseIrrf": 0,
+        "irrfTabela": 0,
+        "reducao": 0,
+        "irrf": 0,
+        "fgts": 12968,
+        "liquido": 149942
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c21",
+      "regra": "RN-ARR-01",
+      "risco": "Diferença de centavos no cálculo",
+      "descricao": "Salário mínimo aceito pelo cadastro (R$ 0,01)",
+      "entrada": {
+        "salario": "0,01",
+        "salarioCentavos": 1,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 0,
+        "baseIrrf": 0,
+        "irrfTabela": 0,
+        "reducao": 0,
+        "irrf": 0,
+        "fgts": 0,
+        "liquido": 1
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c22",
+      "regra": "RN-INSS-01",
+      "risco": "Desconto de INSS diferente do devido (progressividade)",
+      "descricao": "Salário simples dentro da 1ª faixa (R$ 1.000,00)",
+      "entrada": {
+        "salario": "1000,00",
+        "salarioCentavos": 100000,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 7500,
+        "baseIrrf": 39280,
+        "irrfTabela": 0,
+        "reducao": 0,
+        "irrf": 0,
+        "fgts": 8000,
+        "liquido": 92500
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c23",
+      "regra": "RN-ARR-01",
+      "risco": "Diferença de centavos no cálculo",
+      "descricao": "Valores com centavos quebrados (R$ 12.345,67 e 4 dependentes)",
+      "entrada": {
+        "salario": "12345,67",
+        "salarioCentavos": 1234567,
+        "dependentes": 4
+      },
+      "esperado": {
+        "inss": 98809,
+        "baseIrrf": 1059922,
+        "irrfTabela": 200606,
+        "reducao": 0,
+        "irrf": 200606,
+        "fgts": 98765,
+        "liquido": 935152
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c24",
+      "regra": "RN-INSS-02",
+      "risco": "INSS acima do máximo legal",
+      "descricao": "Salário máximo aceito pelo cadastro (R$ 999.999,99)",
+      "entrada": {
+        "salario": "999999,99",
+        "salarioCentavos": 99999999,
+        "dependentes": 10
+      },
+      "esperado": {
+        "inss": 98809,
+        "baseIrrf": 99711600,
+        "irrfTabela": 27329817,
+        "reducao": 0,
+        "irrf": 27329817,
+        "fgts": 8000000,
+        "liquido": 72571373
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c25",
+      "regra": "RN-IRRF-01",
+      "risco": "IRRF calculado sobre base errada",
+      "descricao": "Faixa intermediária da tabela do IRRF (R$ 3.500,00)",
+      "entrada": {
+        "salario": "3500,00",
+        "salarioCentavos": 350000,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 30860,
+        "baseIrrf": 289280,
+        "irrfTabela": 3976,
+        "reducao": 3976,
+        "irrf": 0,
+        "fgts": 28000,
+        "liquido": 319140
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c26",
+      "regra": "RN-IRRF-01",
+      "risco": "IRRF calculado sobre base errada",
+      "descricao": "Faixa alta da tabela do IRRF sem redutor (R$ 9.000,00)",
+      "entrada": {
+        "salario": "9000,00",
+        "salarioCentavos": 900000,
+        "dependentes": 1
+      },
+      "esperado": {
+        "inss": 98809,
+        "baseIrrf": 782232,
+        "irrfTabela": 124241,
+        "reducao": 0,
+        "irrf": 124241,
+        "fgts": 72000,
+        "liquido": 676950
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c27",
+      "regra": "RN-ARR-01",
+      "risco": "Diferença de centavos no cálculo",
+      "descricao": "Arredondamento do INSS no meio do centavo (R$ 6.000,00)",
+      "entrada": {
+        "salario": "6000,00",
+        "salarioCentavos": 600000,
+        "dependentes": 0
+      },
+      "esperado": {
+        "inss": 64151,
+        "baseIrrf": 535849,
+        "irrfTabela": 56485,
+        "reducao": 17975,
+        "irrf": 38510,
+        "fgts": 48000,
+        "liquido": 497339
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    },
+    {
+      "id": "c28",
+      "regra": "RN-INSS-03",
+      "risco": "Desconto de INSS diferente do devido (progressividade)",
+      "descricao": "Salário com INSS de 2ª faixa e dependentes (R$ 2.500,00)",
+      "entrada": {
+        "salario": "2500,00",
+        "salarioCentavos": 250000,
+        "dependentes": 3
+      },
+      "esperado": {
+        "inss": 20069,
+        "baseIrrf": 173054,
+        "irrfTabela": 0,
+        "reducao": 0,
+        "irrf": 0,
+        "fgts": 20000,
+        "liquido": 229931
+      },
+      "amostra_conferencia": false,
+      "conferido_por": null,
+      "conferido_em": null
+    }
+  ]
+}

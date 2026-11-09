@@ -1,0 +1,38 @@
+{
+  "_aviso": "Valores em CENTAVOS e alíquotas em pontos-base (bps: 750 = 7,5%). Transcrição 1 de 2 (a transcrição independente usada pelos testes está em tests/oraculo/tabelas-oficiais.ts). CONFERIR com as fontes oficiais antes de qualquer uso além da demonstração.",
+  "vigencia": "2026-01-01",
+  "fontes": [
+    "INSS: Portaria Interministerial MPS/MF nº 13, de 9 de janeiro de 2026 (tabela de contribuição mensal do empregado)",
+    "IRRF: tabela progressiva mensal vigente (Receita Federal) e redutor da Lei nº 15.270, de 26 de novembro de 2025",
+    "IRRF: orientação da Receita Federal às fontes pagadoras para o cálculo da redução a partir de 01/01/2026",
+    "FGTS: Lei nº 8.036/1990, art. 15 (depósito de 8% da remuneração, a cargo do empregador)"
+  ],
+  "inss": {
+    "teto_centavos": 847555,
+    "faixas": [
+      { "ate_centavos": 162100, "aliquota_bps": 750 },
+      { "ate_centavos": 290284, "aliquota_bps": 900 },
+      { "ate_centavos": 435427, "aliquota_bps": 1200 },
+      { "ate_centavos": 847555, "aliquota_bps": 1400 }
+    ]
+  },
+  "irrf": {
+    "deducao_dependente_centavos": 18959,
+    "desconto_simplificado_centavos": 60720,
+    "faixas": [
+      { "ate_centavos": 242880, "aliquota_bps": 0, "parcela_deduzir_centavos": 0 },
+      { "ate_centavos": 282665, "aliquota_bps": 750, "parcela_deduzir_centavos": 18216 },
+      { "ate_centavos": 375105, "aliquota_bps": 1500, "parcela_deduzir_centavos": 39416 },
+      { "ate_centavos": 466468, "aliquota_bps": 2250, "parcela_deduzir_centavos": 67549 },
+      { "ate_centavos": null, "aliquota_bps": 2750, "parcela_deduzir_centavos": 90873 }
+    ],
+    "reducao": {
+      "limite_isencao_centavos": 500000,
+      "limite_final_centavos": 735000,
+      "maximo_ate_isencao_centavos": 31289,
+      "constante_centavos": 97862,
+      "coeficiente_micros": 133145
+    }
+  },
+  "fgts": { "aliquota_bps": 800 }
+}

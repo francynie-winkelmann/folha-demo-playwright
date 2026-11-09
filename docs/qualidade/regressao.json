@@ -1,0 +1,13 @@
+{
+  "referencia": "v1 (entregue na Fase 2A)",
+  "comparadas": 1650,
+  "iguais": 1650,
+  "inesperadas": 0,
+  "experimentos": [
+    {
+      "id": "mensal_fgts_truncado",
+      "alteradas": 762,
+      "detectada": true
+    }
+  ]
+}

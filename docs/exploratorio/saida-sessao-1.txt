@@ -1,0 +1,44 @@
+S01 admissão = desligamento (mesmo dia)
+   -> aviso 30d, projetada 2025-09-19, avos13 1, avosFérias 1, 13º 250.00, líquido 5408.89  (igual ao oráculo)
+S02 desligamento um dia antes da admissão
+   -> recusado pela tela: A data de desligamento não pode ser anterior à admissão.
+S03 admissão em 29/02 (bissexto), desligamento em 28/02 do ano seguinte
+   -> aviso 33d, projetada 2021-04-02, avos13 3, avosFérias 1, 13º 750.00, líquido 6899.39  (igual ao oráculo)
+S04 admissão em 29/02, desligamento em 01/03 do ano seguinte (aniversário)
+   -> aviso 33d, projetada 2021-04-03, avos13 3, avosFérias 1, 13º 750.00, líquido 4419.58  (igual ao oráculo)
+S05 desligamento em 31/12 (aviso projeta para o ano seguinte)
+   -> aviso 48d, projetada 2026-02-17, avos13 2, avosFérias 1, 13º 500.00, líquido 8347.23  (igual ao oráculo)
+S06 desligamento em 01/01
+   -> aviso 45d, projetada 2025-02-15, avos13 2, avosFérias 1, 13º 500.00, líquido 5388.33  (igual ao oráculo)
+S07 desligamento 20/12 (projeção em janeiro)
+   -> aviso 48d, projetada 2026-02-06, avos13 1, avosFérias 1, 13º 250.00, líquido 7208.89  (igual ao oráculo)
+S08 desligamento 10/12 (projeção em janeiro, mês de dezembro com 10 dias)
+   -> aviso 48d, projetada 2026-01-27, avos13 1, avosFérias 1, 13º 250.00, líquido 6289.58  (igual ao oráculo)
+S09 desligamento em fevereiro bissexto (29/02/2024)
+   -> aviso 42d, projetada 2024-04-11, avos13 3, avosFérias 3, 13º 750.00, líquido 8557.06  (igual ao oráculo)
+S10 desligamento em fevereiro comum (28/02/2025)
+   -> aviso 45d, projetada 2025-04-14, avos13 3, avosFérias 3, 13º 750.00, líquido 8766.06  (igual ao oráculo)
+S11 mês com 31 dias, desligamento no dia 31
+   -> aviso 45d, projetada 2025-10-15, avos13 10, avosFérias 9, 13º 2500.00, líquido 12550.71  (igual ao oráculo)
+S12 vínculo de 40 anos (limite de 90 dias de aviso)
+   -> aviso 90d, projetada 2025-11-18, avos13 11, avosFérias 10, 13º 2750.00, líquido 16704.45  (igual ao oráculo)
+S13 vínculo de 20 anos e 1 dia antes do aniversário
+   -> aviso 90d, projetada 2025-11-18, avos13 11, avosFérias 3, 13º 2750.00, líquido 14371.12  (igual ao oráculo)
+S14 data limite inferior 01/01/1900
+   -> aviso 90d, projetada 2025-11-18, avos13 11, avosFérias 11, 13º 2750.00, líquido 17037.79  (igual ao oráculo)
+S15 desligamento no limite superior 31/12/2100
+   -> aviso 63d, projetada 2101-03-04, avos13 2, avosFérias 2, 13º 500.00, líquido 10180.57  (igual ao oráculo)
+S16 pedido de demissão sem aviso, 1 dia de vínculo no mês
+   -> aviso 0d, projetada 2025-08-20, avos13 0, avosFérias 0, 13º 0.00, líquido -1155.69  (igual ao oráculo)
+S17 admissão em 29/02/2100 (2100 NÃO é bissexto)
+   -> recusado pela tela: Informe a data de admissão.
+S18 admissão em 29/02/1900 (1900 NÃO é bissexto)
+   -> recusado pela tela: Informe a data de admissão.
+S19 desligamento em 01/01/2101 (acima do limite)
+   -> recusado pela tela: Data de desligamento inválida.
+S20 admissão em 31/12/1899 (abaixo do limite)
+   -> recusado pela tela: Data de admissão inválida.
+S21 admissão em 29/02/2000 (2000 É bissexto), desligamento em 28/02/2001
+   -> aviso 33d, projetada 2001-04-02, avos13 3, avosFérias 1, 13º 750.00, líquido 6899.39  (igual ao oráculo)
+S22 salário de 1 centavo, vínculo de 1 mês
+   -> aviso 30d, projetada 2025-09-19, avos13 2, avosFérias 2, 13º 0.00, líquido 0.02  (igual ao oráculo)

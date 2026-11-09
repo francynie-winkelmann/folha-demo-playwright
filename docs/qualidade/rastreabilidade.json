@@ -1,0 +1,2088 @@
+{
+  "regras": [
+    {
+      "regra": "RN-CAD-01",
+      "texto": "Nome obrigatório, de 3 a 100 caracteres (espaços nas pontas não contam).",
+      "testes": 6,
+      "passaram": 6,
+      "falharam": 0,
+      "riscos": [
+        "Dado inválido entrando no cálculo da folha",
+        "Rejeitar indevidamente um dado válido (falso positivo de validação)"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-CAD-01] nome vazio",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-01] nome só com espaços",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-01] nome com 2 caracteres (abaixo do mínimo)",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-01] nome com 101 caracteres (acima do máximo)",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-01] nome com 3 caracteres (mínimo)",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-01] nome com 100 caracteres (máximo)",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-CAD-02",
+      "texto": "CPF obrigatório, com 11 dígitos (com ou sem máscara `000.000.000-00`), dígitos verificadores válidos e não todos iguais.",
+      "testes": 7,
+      "passaram": 7,
+      "falharam": 0,
+      "riscos": [
+        "Funcionário cadastrado com documento inválido",
+        "Rejeitar indevidamente um dado válido (falso positivo de validação)"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-CAD-02] CPF vazio",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-02] CPF com dígito verificador errado",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-02] CPF com todos os dígitos iguais",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-02] CPF curto",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-02] CPF com letras",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-02] CPF com máscara incompleta",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-02] CPF válido sem máscara",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-CAD-03",
+      "texto": "Salário obrigatório, maior que zero, no máximo R$ 999.999,99, com até 2 casas decimais.",
+      "testes": 10,
+      "passaram": 10,
+      "falharam": 0,
+      "riscos": [
+        "Dado inválido entrando no cálculo da folha",
+        "Rejeitar indevidamente um dado válido (falso positivo de validação)"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-CAD-03] salário vazio",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-03] salário zero",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-03] salário 0,00",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-03] salário negativo",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-03] salário com letras",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-03] salário com 3 casas decimais",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-03] salário 1 centavo acima do máximo",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-03] salário mínimo aceito (0,01)",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-03] salário máximo aceito (999999,99)",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-03] salário com separador de milhar",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-CAD-04",
+      "texto": "Data de admissão obrigatória, entre 01/01/1900 e a data de hoje.",
+      "testes": 5,
+      "passaram": 5,
+      "falharam": 0,
+      "riscos": [
+        "Dado inválido entrando no cálculo da folha",
+        "Rejeitar indevidamente um dado válido (falso positivo de validação)"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-CAD-04] admissão vazia",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-04] admissão amanhã (futura)",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-04] admissão antes de 1900",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-04] admissão hoje (limite de data)",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-04] admissão em 1900-01-01 (limite mínimo)",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-CAD-05",
+      "texto": "Dependentes obrigatório, inteiro de 0 a 10.",
+      "testes": 7,
+      "passaram": 7,
+      "falharam": 0,
+      "riscos": [
+        "Dado inválido entrando no cálculo da folha",
+        "Rejeitar indevidamente um dado válido (falso positivo de validação)"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-CAD-05] dependentes vazio",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-05] dependentes negativo",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-05] dependentes decimal",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-05] dependentes com letras",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-05] dependentes acima do máximo (11)",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-05] zero dependentes",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-05] dez dependentes (máximo)",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-CAD-06",
+      "texto": "Havendo qualquer erro, nenhum holerite é gerado e cada campo inválido mostra sua mensagem.",
+      "testes": 2,
+      "passaram": 2,
+      "falharam": 0,
+      "riscos": [
+        "Folha calculada sem dados obrigatórios",
+        "Mensagem de erro que não some após a correção"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-CAD-06] formulário vazio mostra um erro por campo e não gera holerite",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-CAD-06] corrigir o campo inválido remove o erro e gera o holerite",
+          "arquivo": "campos/campos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-INSS-01",
+      "texto": "INSS **progressivo**: cada alíquota incide só sobre a parte do salário dentro da faixa: 7,5% até R$ 1.621,00; 9% até R$ 2.902,84; 12% até R$ 4.354,27; 14% até o teto.",
+      "testes": 7,
+      "passaram": 7,
+      "falharam": 0,
+      "riscos": [
+        "Desconto de INSS diferente do devido (progressividade)"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-INSS-01] c01: Salário exatamente no limite da 1ª faixa do INSS",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-01] c02: Salário 1 centavo acima do limite da 1ª faixa",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-01] c03: Salário exatamente no limite da 2ª faixa",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-01] c04: Salário 1 centavo acima do limite da 2ª faixa",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-01] c05: Salário exatamente no limite da 3ª faixa",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-01] c06: Salário 1 centavo acima do limite da 3ª faixa",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-01] c22: Salário simples dentro da 1ª faixa (R$ 1.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-INSS-02",
+      "texto": "Salário acima do teto (R$ 8.475,55) contribui como se fosse o teto: INSS máximo de **R$ 988,09**.",
+      "testes": 4,
+      "passaram": 4,
+      "falharam": 0,
+      "riscos": [
+        "INSS acima do máximo legal"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-INSS-02] c07: Salário exatamente no teto do INSS",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-02] c08: Salário 1 centavo acima do teto do INSS",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-02] c09: Salário bem acima do teto (R$ 15.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-02] c24: Salário máximo aceito pelo cadastro (R$ 999.999,99)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-INSS-03",
+      "texto": "O INSS não depende do número de dependentes.",
+      "testes": 1,
+      "passaram": 1,
+      "falharam": 0,
+      "riscos": [
+        "Desconto de INSS diferente do devido (progressividade)"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-INSS-03] c28: Salário com INSS de 2ª faixa e dependentes (R$ 2.500,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-IRRF-01",
+      "texto": "Base do IRRF = salário − INSS − (dependentes × R$ 189,59). Imposto = base × alíquota − parcela a deduzir (tabela progressiva mensal).",
+      "testes": 7,
+      "passaram": 7,
+      "falharam": 0,
+      "riscos": [
+        "IRRF calculado sobre base errada"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-IRRF-01] c11: INSS + 2 dependentes (R$ 3.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c15: Redução parcial com 2 dependentes (R$ 6.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c18: Isenção total com 1 dependente (R$ 4.500,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c19: Redução parcial com 3 dependentes (R$ 5.500,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c20: Máximo de dependentes (10) com salário baixo",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c25: Faixa intermediária da tabela do IRRF (R$ 3.500,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c26: Faixa alta da tabela do IRRF sem redutor (R$ 9.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-IRRF-02",
+      "texto": "Se o **desconto simplificado** (R$ 607,20) for maior que INSS + dependentes, ele é usado no lugar.",
+      "testes": 1,
+      "passaram": 1,
+      "falharam": 0,
+      "riscos": [
+        "IRRF calculado sobre base errada"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-IRRF-02] c10: Desconto simplificado maior que INSS + dependentes",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-IRRF-03",
+      "texto": "**Redutor (Lei 15.270/2025)**, calculado sobre o salário bruto e limitado ao imposto da tabela: até R$ 5.000,00, redução de até R$ 312,89; de R$ 5.000,01 a R$ 7.350,00, redução = R$ 978,62 − 0,133145 × salário; acima de R$ 7.350,00, sem redução. IRRF retido = imposto − redução (mínimo zero).",
+      "testes": 5,
+      "passaram": 5,
+      "falharam": 0,
+      "riscos": [
+        "Retenção indevida de IRRF (redutor da Lei 15.270/2025)"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-IRRF-03] c12: Salário exatamente no limite da isenção (R$ 5.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-03] c13: Salário 1 centavo acima do limite da isenção",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-03] c14: Redução parcial por fórmula (R$ 6.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-03] c16: Salário no fim do redutor (R$ 7.350,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-03] c17: Salário logo acima do fim do redutor (R$ 7.350,01)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-ARR-01",
+      "texto": "Arredondamento **meio para cima, uma única vez** por valor. O INSS soma as faixas com precisão total e só arredonda o resultado.",
+      "testes": 3,
+      "passaram": 3,
+      "falharam": 0,
+      "riscos": [
+        "Diferença de centavos no cálculo"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-ARR-01] c21: Salário mínimo aceito pelo cadastro (R$ 0,01)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-ARR-01] c23: Valores com centavos quebrados (R$ 12.345,67 e 4 dependentes)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-ARR-01] c27: Arredondamento do INSS no meio do centavo (R$ 6.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-FGTS-01",
+      "texto": "FGTS = 8% do salário. É depósito do empregador: **não** é descontado do salário líquido (testado em RN-HOL-03).",
+      "testes": 28,
+      "passaram": 28,
+      "falharam": 0,
+      "riscos": [
+        "Desconto de INSS diferente do devido (progressividade)",
+        "INSS acima do máximo legal",
+        "IRRF calculado sobre base errada",
+        "Retenção indevida de IRRF (redutor da Lei 15.270/2025)",
+        "Diferença de centavos no cálculo"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-INSS-01] c01: Salário exatamente no limite da 1ª faixa do INSS",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-01] c02: Salário 1 centavo acima do limite da 1ª faixa",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-01] c03: Salário exatamente no limite da 2ª faixa",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-01] c04: Salário 1 centavo acima do limite da 2ª faixa",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-01] c05: Salário exatamente no limite da 3ª faixa",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-01] c06: Salário 1 centavo acima do limite da 3ª faixa",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-02] c07: Salário exatamente no teto do INSS",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-02] c08: Salário 1 centavo acima do teto do INSS",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-02] c09: Salário bem acima do teto (R$ 15.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-02] c10: Desconto simplificado maior que INSS + dependentes",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c11: INSS + 2 dependentes (R$ 3.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-03] c12: Salário exatamente no limite da isenção (R$ 5.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-03] c13: Salário 1 centavo acima do limite da isenção",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-03] c14: Redução parcial por fórmula (R$ 6.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c15: Redução parcial com 2 dependentes (R$ 6.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-03] c16: Salário no fim do redutor (R$ 7.350,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-03] c17: Salário logo acima do fim do redutor (R$ 7.350,01)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c18: Isenção total com 1 dependente (R$ 4.500,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c19: Redução parcial com 3 dependentes (R$ 5.500,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c20: Máximo de dependentes (10) com salário baixo",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-ARR-01] c21: Salário mínimo aceito pelo cadastro (R$ 0,01)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-01] c22: Salário simples dentro da 1ª faixa (R$ 1.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-ARR-01] c23: Valores com centavos quebrados (R$ 12.345,67 e 4 dependentes)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-02] c24: Salário máximo aceito pelo cadastro (R$ 999.999,99)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c25: Faixa intermediária da tabela do IRRF (R$ 3.500,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c26: Faixa alta da tabela do IRRF sem redutor (R$ 9.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-ARR-01] c27: Arredondamento do INSS no meio do centavo (R$ 6.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-03] c28: Salário com INSS de 2ª faixa e dependentes (R$ 2.500,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-LIQ-01",
+      "texto": "Líquido = salário − INSS − IRRF retido.",
+      "testes": 28,
+      "passaram": 28,
+      "falharam": 0,
+      "riscos": [
+        "Desconto de INSS diferente do devido (progressividade)",
+        "INSS acima do máximo legal",
+        "IRRF calculado sobre base errada",
+        "Retenção indevida de IRRF (redutor da Lei 15.270/2025)",
+        "Diferença de centavos no cálculo"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-INSS-01] c01: Salário exatamente no limite da 1ª faixa do INSS",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-01] c02: Salário 1 centavo acima do limite da 1ª faixa",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-01] c03: Salário exatamente no limite da 2ª faixa",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-01] c04: Salário 1 centavo acima do limite da 2ª faixa",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-01] c05: Salário exatamente no limite da 3ª faixa",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-01] c06: Salário 1 centavo acima do limite da 3ª faixa",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-02] c07: Salário exatamente no teto do INSS",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-02] c08: Salário 1 centavo acima do teto do INSS",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-02] c09: Salário bem acima do teto (R$ 15.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-02] c10: Desconto simplificado maior que INSS + dependentes",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c11: INSS + 2 dependentes (R$ 3.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-03] c12: Salário exatamente no limite da isenção (R$ 5.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-03] c13: Salário 1 centavo acima do limite da isenção",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-03] c14: Redução parcial por fórmula (R$ 6.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c15: Redução parcial com 2 dependentes (R$ 6.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-03] c16: Salário no fim do redutor (R$ 7.350,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-03] c17: Salário logo acima do fim do redutor (R$ 7.350,01)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c18: Isenção total com 1 dependente (R$ 4.500,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c19: Redução parcial com 3 dependentes (R$ 5.500,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c20: Máximo de dependentes (10) com salário baixo",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-ARR-01] c21: Salário mínimo aceito pelo cadastro (R$ 0,01)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-01] c22: Salário simples dentro da 1ª faixa (R$ 1.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-ARR-01] c23: Valores com centavos quebrados (R$ 12.345,67 e 4 dependentes)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-02] c24: Salário máximo aceito pelo cadastro (R$ 999.999,99)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c25: Faixa intermediária da tabela do IRRF (R$ 3.500,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-IRRF-01] c26: Faixa alta da tabela do IRRF sem redutor (R$ 9.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-ARR-01] c27: Arredondamento do INSS no meio do centavo (R$ 6.000,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-INSS-03] c28: Salário com INSS de 2ª faixa e dependentes (R$ 2.500,00)",
+          "arquivo": "calculo/calculo.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-HOL-01",
+      "texto": "O holerite mostra o nome e o CPF do funcionário informado.",
+      "testes": 1,
+      "passaram": 1,
+      "falharam": 0,
+      "riscos": [
+        "Holerite emitido para o funcionário errado"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-HOL-01] mostra nome e CPF exatamente como informados",
+          "arquivo": "holerite/holerite.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-HOL-02",
+      "texto": "Valores monetários aparecem em reais, no formato brasileiro (`R$ 1.621,00`), e o valor exibido corresponde ao calculado.",
+      "testes": 1,
+      "passaram": 1,
+      "falharam": 0,
+      "riscos": [
+        "Valor exibido de forma ambígua ou com formatação errada"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-HOL-02] valores são exibidos em reais, no padrão brasileiro",
+          "arquivo": "holerite/holerite.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-HOL-03",
+      "texto": "FGTS é exibido como informação do empregador e **não** reduz o líquido.",
+      "testes": 1,
+      "passaram": 1,
+      "falharam": 0,
+      "riscos": [
+        "FGTS (custo do empregador) descontado indevidamente do funcionário"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-HOL-03] o FGTS é informado, mas não é descontado do salário líquido",
+          "arquivo": "holerite/holerite.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-HOL-04",
+      "texto": "Ao recalcular com novos dados, o holerite exibido é o do último cálculo.",
+      "testes": 1,
+      "passaram": 1,
+      "falharam": 0,
+      "riscos": [
+        "Holerite desatualizado exibindo valores do cálculo anterior"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-HOL-04] recalcular com outro salário atualiza o holerite",
+          "arquivo": "holerite/holerite.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-HOL-05",
+      "texto": "Se o novo cadastro tiver erro, nenhum holerite antigo permanece na tela.",
+      "testes": 1,
+      "passaram": 1,
+      "falharam": 0,
+      "riscos": [
+        "Holerite antigo permanece na tela após erro de validação"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-HOL-05] depois de um cálculo válido, um dado inválido esconde o holerite antigo",
+          "arquivo": "holerite/holerite.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-PROP-01",
+      "texto": "Para qualquer salário: líquido = bruto − INSS − IRRF, INSS ≤ teto e IRRF ≥ 0 (propriedade, verificada sobre vários salários).",
+      "testes": 9,
+      "passaram": 9,
+      "falharam": 0,
+      "riscos": [
+        "Cálculo incoerente consigo mesmo ou fora dos limites legais"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-PROP-01] salário R$ 1000,00: líquido = bruto - INSS - IRRF, INSS dentro do teto, IRRF não negativo",
+          "arquivo": "holerite/holerite.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-PROP-01] salário R$ 1621,00: líquido = bruto - INSS - IRRF, INSS dentro do teto, IRRF não negativo",
+          "arquivo": "holerite/holerite.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-PROP-01] salário R$ 3000,00: líquido = bruto - INSS - IRRF, INSS dentro do teto, IRRF não negativo",
+          "arquivo": "holerite/holerite.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-PROP-01] salário R$ 5000,00: líquido = bruto - INSS - IRRF, INSS dentro do teto, IRRF não negativo",
+          "arquivo": "holerite/holerite.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-PROP-01] salário R$ 6000,00: líquido = bruto - INSS - IRRF, INSS dentro do teto, IRRF não negativo",
+          "arquivo": "holerite/holerite.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-PROP-01] salário R$ 7350,00: líquido = bruto - INSS - IRRF, INSS dentro do teto, IRRF não negativo",
+          "arquivo": "holerite/holerite.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-PROP-01] salário R$ 8475,55: líquido = bruto - INSS - IRRF, INSS dentro do teto, IRRF não negativo",
+          "arquivo": "holerite/holerite.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-PROP-01] salário R$ 10000,00: líquido = bruto - INSS - IRRF, INSS dentro do teto, IRRF não negativo",
+          "arquivo": "holerite/holerite.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-PROP-01] salário R$ 50000,00: líquido = bruto - INSS - IRRF, INSS dentro do teto, IRRF não negativo",
+          "arquivo": "holerite/holerite.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-ORA-01",
+      "texto": "A tabela de casos em arquivo coincide com a calculadora independente.",
+      "testes": 1,
+      "passaram": 1,
+      "falharam": 0,
+      "riscos": [
+        "Arquivo de casos editado à mão ou desatualizado em relação à calculadora"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-ORA-01] a tabela de casos coincide com a calculadora independente",
+          "arquivo": "oraculo/oraculos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-ORA-02",
+      "texto": "As duas transcrições das tabelas (aplicação e testes) são idênticas.",
+      "testes": 1,
+      "passaram": 1,
+      "falharam": 0,
+      "riscos": [
+        "Erro de digitação em uma das tabelas de INSS/IRRF"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-ORA-02] as duas transcrições das tabelas (app e testes) são idênticas",
+          "arquivo": "oraculo/oraculos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-ORA-03",
+      "texto": "A calculadora independente reproduz os exemplos numéricos publicados pela Receita Federal (redutor do IRRF).",
+      "testes": 1,
+      "passaram": 1,
+      "falharam": 0,
+      "riscos": [
+        "Calculadora de referência com a fórmula do redutor errada"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-ORA-03] a calculadora bate com os exemplos oficiais da Receita Federal (redutor da Lei 15.270/2025)",
+          "arquivo": "oraculo/oraculos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-ORA-04",
+      "texto": "A calculadora independente dá INSS máximo de R$ 988,09 no teto e nunca decrescente com o salário.",
+      "testes": 1,
+      "passaram": 1,
+      "falharam": 0,
+      "riscos": [
+        "Calculadora de referência com INSS incoerente"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-ORA-04] INSS máximo de R$ 988,09 no teto e nunca decresce com o aumento do salário",
+          "arquivo": "oraculo/oraculos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-ORA-05",
+      "texto": "O relatório informa quantos casos da amostra ainda aguardam conferência humana com a fonte oficial.",
+      "testes": 1,
+      "passaram": 1,
+      "falharam": 0,
+      "riscos": [
+        "Esperado nunca conferido por uma pessoa com a fonte oficial"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-ORA-05] informa quantos casos ainda aguardam conferência humana com a fonte oficial",
+          "arquivo": "oraculo/oraculos.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-RES-01",
+      "texto": "**Saldo de salário** = salário ÷ 30 × dias do mês até o desligamento (mês comercial de 30 dias; dia 31 conta como 30).",
+      "testes": 2,
+      "passaram": 2,
+      "falharam": 0,
+      "riscos": [
+        "Saldo de salário calculado com dias errados"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-RES-01] r01: Desligamento no dia 31: o mês comercial conta 30 dias",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-01] r02: Desligamento no dia 1: um único dia de saldo",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-RES-02",
+      "texto": "**Aviso prévio indenizado** (só na dispensa sem justa causa): 30 dias + 3 por ano completo de serviço, máximo de 90. Se a data projetada pelo aviso completar **mais um ano** de serviço, somam-se mais 3 dias (ainda limitado a 90). Valor = salário ÷ 30 × dias.",
+      "testes": 7,
+      "passaram": 7,
+      "falharam": 0,
+      "riscos": [
+        "Aviso prévio pago a menos ou a mais",
+        "Comportamento descrito no cenário BDD: Aviso prévio soma 3 dias por ano de casa e mais 3 se a projeção completar um ano (caso r05)"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-RES-02] r03: Menos de 1 ano de casa: aviso de 30 dias",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-02] r04: 3 anos completos: aviso de 39 dias",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-02] r05: A projeção do aviso completa mais um ano: +3 dias (2 anos + projeção = 39)",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-02] r06: A projeção NÃO chega ao aniversário: sem os 3 dias extras (36)",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-02] r07: Mais de 25 anos de casa: aviso limitado a 90 dias",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-02] r08: Admissão em 29/02: o aniversário cai em 01/03 nos anos não bissextos",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "Aviso prévio soma 3 dias por ano de casa e mais 3 se a projeção completar um ano (caso r05)",
+          "arquivo": "bdd/rescisao.feature.spec.js",
+          "origem": "bdd",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-RES-03",
+      "texto": "O aviso indenizado conta como tempo de serviço: a **data projetada** (desligamento + dias de aviso) vale para os avos de férias e de 13º.",
+      "testes": 1,
+      "passaram": 1,
+      "falharam": 0,
+      "riscos": [
+        "Férias proporcionais e 13º com número de avos errado"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-RES-03] r09: A projeção do aviso acrescenta um avo de 13º e de férias",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-RES-04",
+      "texto": "**Avos**: cada mês com 15 dias ou mais de vínculo conta 1/12. 13º: meses do ano da data projetada (no ano da admissão, a partir dela). Férias: meses desde o último aniversário de admissão, máximo de 12. Quem entrou em 29/02 faz aniversário em 01/03 nos anos não bissextos.",
+      "testes": 9,
+      "passaram": 9,
+      "falharam": 0,
+      "riscos": [
+        "Férias proporcionais e 13º com número de avos errado",
+        "Comportamento descrito no cenário BDD: Exemplos: #1",
+        "Comportamento descrito no cenário BDD: Exemplos: #2"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-RES-04] r10: Pedido de demissão: exatamente 15 dias no mês conta como avo",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r11: Pedido de demissão: 14 dias no mês não conta como avo",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r12: Admitido no ano com 15 dias no mês de admissão: conta",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r13: Admitido no ano com 14 dias no mês de admissão: não conta",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r14: Férias proporcionais: sobra de 16 dias após os meses completos conta 1 avo",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r15: Férias proporcionais: sobra de 14 dias não conta",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r16: Férias proporcionais no limite de 12 avos",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "Exemplos: #1",
+          "arquivo": "bdd/rescisao.feature.spec.js",
+          "origem": "bdd",
+          "resultado": "passou"
+        },
+        {
+          "teste": "Exemplos: #2",
+          "arquivo": "bdd/rescisao.feature.spec.js",
+          "origem": "bdd",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-RES-05",
+      "texto": "**Férias vencidas** (1 período não gozado): 1 salário + 1/3 do salário.",
+      "testes": 1,
+      "passaram": 1,
+      "falharam": 0,
+      "riscos": [
+        "Férias vencidas esquecidas ou sem o terço"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-RES-05] r17: Férias vencidas: 1 salário + 1/3",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-RES-06",
+      "texto": "**Férias proporcionais** = salário × avos ÷ 12, mais 1/3 (salário × avos ÷ 36).",
+      "testes": 1,
+      "passaram": 1,
+      "falharam": 0,
+      "riscos": [
+        "Terço constitucional omitido ou calculado sobre valor arredondado"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-RES-06] r18: Férias proporcionais com o terço",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-RES-07",
+      "texto": "**13º proporcional** = salário × avos ÷ 12.",
+      "testes": 1,
+      "passaram": 1,
+      "falharam": 0,
+      "riscos": [
+        "Férias proporcionais e 13º com número de avos errado"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-RES-07] r19: 13º proporcional de ano completo (12 avos)",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-RES-08",
+      "texto": "**INSS e IRRF** incidem apenas sobre saldo de salário e 13º proporcional, **cada um calculado em separado** (tabela do INSS, dedução por dependente ou simplificada e redutor da Lei 15.270/2025 aplicados a cada rendimento bruto). Aviso indenizado, férias vencidas, férias proporcionais e seus terços **não** sofrem INSS nem IRRF. *(Redutor no 13º: orientação e validação da analista; fonte oficial ainda a conferir.)*",
+      "testes": 4,
+      "passaram": 4,
+      "falharam": 0,
+      "riscos": [
+        "Tributo retido sobre verba errada"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-RES-08] r20: Redutor da Lei 15.270 também no 13º (13º de R$ 6.500,00)",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-08] r21: Salário alto com 2 dependentes: INSS e IRRF do saldo e do 13º separados",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-08] r22: Aviso prévio longo não sofre INSS nem IRRF",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-08] r29: Três dependentes sem justa causa",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-RES-09",
+      "texto": "**FGTS rescisório** = 8% de (saldo de salário + 13º + aviso indenizado). **Multa de 40%** sobre (saldo do FGTS informado + FGTS rescisório) **somente** na dispensa sem justa causa. FGTS e multa são depositados na conta do trabalhador: **não entram no líquido**.",
+      "testes": 4,
+      "passaram": 4,
+      "falharam": 0,
+      "riscos": [
+        "FGTS ou multa de 40% pagos de forma indevida",
+        "Comportamento descrito no cenário BDD: Dispensa sem justa causa paga a multa de 40% do FGTS (caso r23)",
+        "Comportamento descrito no cenário BDD: Pedido de demissão não paga multa do FGTS (caso r24)"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-RES-09] r23: Sem justa causa: multa de 40% sobre saldo do FGTS + FGTS rescisório",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-09] r24: Pedido de demissão: sem multa de 40%",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "Dispensa sem justa causa paga a multa de 40% do FGTS (caso r23)",
+          "arquivo": "bdd/rescisao.feature.spec.js",
+          "origem": "bdd",
+          "resultado": "passou"
+        },
+        {
+          "teste": "Pedido de demissão não paga multa do FGTS (caso r24)",
+          "arquivo": "bdd/rescisao.feature.spec.js",
+          "origem": "bdd",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-RES-10",
+      "texto": "**Pedido de demissão**: não há aviso indenizado nem multa. Se o aviso **não foi cumprido**, desconta-se 30 dias de salário (1 salário) do líquido.",
+      "testes": 3,
+      "passaram": 3,
+      "falharam": 0,
+      "riscos": [
+        "Líquido da rescisão incorreto",
+        "Comportamento descrito no cenário BDD: Pedido de demissão sem cumprir o aviso desconta um salário (caso r26)"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-RES-10] r25: Pedido de demissão com aviso cumprido: nenhum desconto",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-10] r26: Pedido de demissão sem cumprir o aviso: desconta 30 dias",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "Pedido de demissão sem cumprir o aviso desconta um salário (caso r26)",
+          "arquivo": "bdd/rescisao.feature.spec.js",
+          "origem": "bdd",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-RES-11",
+      "texto": "**Líquido** = soma das verbas (saldo, aviso, férias vencidas e terço, férias proporcionais e terço, 13º) − INSS − IRRF − desconto de aviso. Pode ser negativo (saldo devedor do trabalhador).",
+      "testes": 32,
+      "passaram": 32,
+      "falharam": 0,
+      "riscos": [
+        "Saldo de salário calculado com dias errados",
+        "Aviso prévio pago a menos ou a mais",
+        "Férias proporcionais e 13º com número de avos errado",
+        "Férias vencidas esquecidas ou sem o terço",
+        "Terço constitucional omitido ou calculado sobre valor arredondado",
+        "Tributo retido sobre verba errada",
+        "FGTS ou multa de 40% pagos de forma indevida",
+        "Líquido da rescisão incorreto",
+        "Diferença de centavos acumulada",
+        "Saldo devedor do trabalhador exibido como se fosse valor a receber",
+        "Comportamento descrito no cenário BDD: Quando os descontos superam as verbas, aparece o saldo devedor (caso r27)"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-RES-01] r01: Desligamento no dia 31: o mês comercial conta 30 dias",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-01] r02: Desligamento no dia 1: um único dia de saldo",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-02] r03: Menos de 1 ano de casa: aviso de 30 dias",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-02] r04: 3 anos completos: aviso de 39 dias",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-02] r05: A projeção do aviso completa mais um ano: +3 dias (2 anos + projeção = 39)",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-02] r06: A projeção NÃO chega ao aniversário: sem os 3 dias extras (36)",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-02] r07: Mais de 25 anos de casa: aviso limitado a 90 dias",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-02] r08: Admissão em 29/02: o aniversário cai em 01/03 nos anos não bissextos",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-03] r09: A projeção do aviso acrescenta um avo de 13º e de férias",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r10: Pedido de demissão: exatamente 15 dias no mês conta como avo",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r11: Pedido de demissão: 14 dias no mês não conta como avo",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r12: Admitido no ano com 15 dias no mês de admissão: conta",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r13: Admitido no ano com 14 dias no mês de admissão: não conta",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r14: Férias proporcionais: sobra de 16 dias após os meses completos conta 1 avo",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r15: Férias proporcionais: sobra de 14 dias não conta",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r16: Férias proporcionais no limite de 12 avos",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-05] r17: Férias vencidas: 1 salário + 1/3",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-06] r18: Férias proporcionais com o terço",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-07] r19: 13º proporcional de ano completo (12 avos)",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-08] r20: Redutor da Lei 15.270 também no 13º (13º de R$ 6.500,00)",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-08] r21: Salário alto com 2 dependentes: INSS e IRRF do saldo e do 13º separados",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-08] r22: Aviso prévio longo não sofre INSS nem IRRF",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-09] r23: Sem justa causa: multa de 40% sobre saldo do FGTS + FGTS rescisório",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-09] r24: Pedido de demissão: sem multa de 40%",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-10] r25: Pedido de demissão com aviso cumprido: nenhum desconto",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-10] r26: Pedido de demissão sem cumprir o aviso: desconta 30 dias",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-11] r27: Pedido de demissão sem aviso e com poucos dias: líquido negativo (saldo devedor)",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-11] r27: Pedido de demissão sem aviso e com poucos dias: líquido negativo (saldo devedor)",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-12] r28: Salário com centavos: cada verba arredondada uma só vez",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-08] r29: Três dependentes sem justa causa",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-11] líquido negativo mostra o aviso de saldo devedor; líquido positivo não",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "Quando os descontos superam as verbas, aparece o saldo devedor (caso r27)",
+          "arquivo": "bdd/rescisao.feature.spec.js",
+          "origem": "bdd",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-RES-12",
+      "texto": "**Arredondamento**: meio para cima, uma única vez por verba, sempre a partir do salário (nunca sobre valor já arredondado).",
+      "testes": 30,
+      "passaram": 30,
+      "falharam": 0,
+      "riscos": [
+        "Saldo de salário calculado com dias errados",
+        "Aviso prévio pago a menos ou a mais",
+        "Férias proporcionais e 13º com número de avos errado",
+        "Férias vencidas esquecidas ou sem o terço",
+        "Terço constitucional omitido ou calculado sobre valor arredondado",
+        "Tributo retido sobre verba errada",
+        "FGTS ou multa de 40% pagos de forma indevida",
+        "Líquido da rescisão incorreto",
+        "Diferença de centavos acumulada"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-RES-01] r01: Desligamento no dia 31: o mês comercial conta 30 dias",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-01] r02: Desligamento no dia 1: um único dia de saldo",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-02] r03: Menos de 1 ano de casa: aviso de 30 dias",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-02] r04: 3 anos completos: aviso de 39 dias",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-02] r05: A projeção do aviso completa mais um ano: +3 dias (2 anos + projeção = 39)",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-02] r06: A projeção NÃO chega ao aniversário: sem os 3 dias extras (36)",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-02] r07: Mais de 25 anos de casa: aviso limitado a 90 dias",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-02] r08: Admissão em 29/02: o aniversário cai em 01/03 nos anos não bissextos",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-03] r09: A projeção do aviso acrescenta um avo de 13º e de férias",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r10: Pedido de demissão: exatamente 15 dias no mês conta como avo",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r11: Pedido de demissão: 14 dias no mês não conta como avo",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r12: Admitido no ano com 15 dias no mês de admissão: conta",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r13: Admitido no ano com 14 dias no mês de admissão: não conta",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r14: Férias proporcionais: sobra de 16 dias após os meses completos conta 1 avo",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r15: Férias proporcionais: sobra de 14 dias não conta",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-04] r16: Férias proporcionais no limite de 12 avos",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-05] r17: Férias vencidas: 1 salário + 1/3",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-06] r18: Férias proporcionais com o terço",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-07] r19: 13º proporcional de ano completo (12 avos)",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-08] r20: Redutor da Lei 15.270 também no 13º (13º de R$ 6.500,00)",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-08] r21: Salário alto com 2 dependentes: INSS e IRRF do saldo e do 13º separados",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-08] r22: Aviso prévio longo não sofre INSS nem IRRF",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-09] r23: Sem justa causa: multa de 40% sobre saldo do FGTS + FGTS rescisório",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-09] r24: Pedido de demissão: sem multa de 40%",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-10] r25: Pedido de demissão com aviso cumprido: nenhum desconto",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-10] r26: Pedido de demissão sem cumprir o aviso: desconta 30 dias",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-11] r27: Pedido de demissão sem aviso e com poucos dias: líquido negativo (saldo devedor)",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-12] r28: Salário com centavos: cada verba arredondada uma só vez",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-12] r28: Salário com centavos: cada verba arredondada uma só vez",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RES-08] r29: Três dependentes sem justa causa",
+          "arquivo": "rescisao/rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-RES-13",
+      "texto": "**Limite conhecido do 13º**: os avos de 13º contam só o ano da data projetada; o 13º do ano anterior é assumido como já pago e não é recalculado. Fixado por um teste (`tests/rescisao/limite-conhecido.spec.ts`): salário R$ 3.000,00, admissão 10/01/2020, desligamento 20/11/2025 resulta em 13º R$ 0,00; se o 13º de 2025 não tivesse sido pago, faltariam R$ 3.000,00.",
+      "testes": 1,
+      "passaram": 1,
+      "falharam": 0,
+      "riscos": [
+        "Limite assumido: 13º do ano anterior suposto como já pago"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-RES-13] limite conhecido: 13º do ano anterior não é recalculado (esperado R$ 0,00)",
+          "arquivo": "rescisao/limite-conhecido.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-RESV-01",
+      "texto": "O tipo de desligamento é obrigatório.",
+      "testes": 2,
+      "passaram": 2,
+      "falharam": 0,
+      "riscos": [
+        "Dado inválido entrando no cálculo da rescisão",
+        "Termo antigo permanece na tela ou mensagem de erro que não some após a correção"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-RESV-01] tipo de desligamento não escolhido",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RESV-01] um erro esconde o termo anterior e a mensagem some depois da correção",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-RESV-02",
+      "texto": "Admissão e desligamento são datas reais de calendário entre 01/01/1900 e 31/12/2100; o desligamento não pode ser anterior à admissão. Salário e dependentes seguem RN-CAD-03 e RN-CAD-05.",
+      "testes": 12,
+      "passaram": 12,
+      "falharam": 0,
+      "riscos": [
+        "Dado inválido entrando no cálculo da rescisão",
+        "Rejeitar indevidamente um dado válido (falso positivo de validação)"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-RESV-02] salário vazio",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RESV-02] salário zero",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RESV-02] salário com letras",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RESV-02] dependentes acima do máximo (11)",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RESV-02] dependentes vazio",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RESV-02] admissão vazia",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RESV-02] admissão antes de 1900",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RESV-02] desligamento vazio",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RESV-02] desligamento um dia antes da admissão",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RESV-02] desligamento depois de 2100",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RESV-02] desligamento no mesmo dia da admissão",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RESV-02] dez dependentes (máximo)",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    },
+    {
+      "regra": "RN-RESV-03",
+      "texto": "Saldo do FGTS obrigatório, de R$ 0,00 a R$ 999.999,99.",
+      "testes": 6,
+      "passaram": 6,
+      "falharam": 0,
+      "riscos": [
+        "Dado inválido entrando no cálculo da rescisão",
+        "Rejeitar indevidamente um dado válido (falso positivo de validação)"
+      ],
+      "lista": [
+        {
+          "teste": "[RN-RESV-03] saldo do FGTS vazio",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RESV-03] saldo do FGTS negativo",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RESV-03] saldo do FGTS com letras",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RESV-03] saldo do FGTS acima do máximo",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RESV-03] saldo do FGTS zero",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        },
+        {
+          "teste": "[RN-RESV-03] saldo do FGTS no máximo",
+          "arquivo": "rescisao/campos-rescisao.spec.ts",
+          "origem": "playwright",
+          "resultado": "passou"
+        }
+      ]
+    }
+  ],
+  "semTeste": [],
+  "desconhecidas": [],
+  "testesSemRegra": []
+}

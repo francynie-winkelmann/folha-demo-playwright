@@ -1,0 +1,153 @@
+{
+  "gerado_em": "2026-11-08T03:59:16.169Z",
+  "modo": "rapido",
+  "referencia": {
+    "passaram": 134,
+    "falharam": 0,
+    "instaveis": 0,
+    "ok": true
+  },
+  "defeitos_plantados": 13,
+  "defeitos_detectados": 13,
+  "taxa_de_deteccao_percentual": 100,
+  "defeitos": [
+    {
+      "id": "inss_sem_progressividade",
+      "descricao": "INSS aplica a alíquota da faixa sobre o salário inteiro (sem progressividade)",
+      "risco": "Desconto de INSS maior que o devido para quase todos os salários",
+      "detectado": true,
+      "testes_que_falharam": null,
+      "exemplos": [
+        "[RN-INSS-01] c02: Salário 1 centavo acima do limite da 1ª faixa"
+      ]
+    },
+    {
+      "id": "inss_sem_teto",
+      "descricao": "INSS não respeita o teto de contribuição",
+      "risco": "Desconto acima do máximo legal para salários altos",
+      "detectado": true,
+      "testes_que_falharam": null,
+      "exemplos": [
+        "[RN-INSS-02] c09: Salário bem acima do teto (R$ 15.000,00)"
+      ]
+    },
+    {
+      "id": "arredondamento_antecipado",
+      "descricao": "INSS arredonda cada faixa antes de somar",
+      "risco": "Diferença de centavos que se acumula na folha e na guia",
+      "detectado": true,
+      "testes_que_falharam": null,
+      "exemplos": [
+        "[RN-INSS-01] c03: Salário exatamente no limite da 2ª faixa"
+      ]
+    },
+    {
+      "id": "irrf_base_sem_inss",
+      "descricao": "Base do IRRF não desconta o INSS",
+      "risco": "Imposto retido maior que o devido",
+      "detectado": true,
+      "testes_que_falharam": null,
+      "exemplos": [
+        "[RN-INSS-02] c07: Salário exatamente no teto do INSS"
+      ]
+    },
+    {
+      "id": "irrf_dependente_so_primeiro",
+      "descricao": "Dedução por dependente aplicada somente ao primeiro dependente",
+      "risco": "Imposto errado para quem tem 2 ou mais dependentes",
+      "detectado": true,
+      "testes_que_falharam": null,
+      "exemplos": [
+        "[RN-IRRF-01] c11: INSS + 2 dependentes (R$ 3.000,00)"
+      ]
+    },
+    {
+      "id": "irrf_sem_reducao",
+      "descricao": "Redutor da Lei 15.270/2025 não é aplicado",
+      "risco": "Retenção indevida para quem ganha até R$ 7.350",
+      "detectado": true,
+      "testes_que_falharam": null,
+      "exemplos": [
+        "[RN-INSS-01] c05: Salário exatamente no limite da 3ª faixa"
+      ]
+    },
+    {
+      "id": "cadastro_salario_invalido",
+      "descricao": "Cadastro aceita salário zero ou negativo",
+      "risco": "Dado inválido entrando no cálculo da folha",
+      "detectado": true,
+      "testes_que_falharam": null,
+      "exemplos": [
+        "[RN-CAD-03] salário zero"
+      ]
+    },
+    {
+      "id": "cpf_sem_digito_verificador",
+      "descricao": "Cadastro não confere os dígitos verificadores do CPF",
+      "risco": "Funcionário cadastrado com documento inválido",
+      "detectado": true,
+      "testes_que_falharam": null,
+      "exemplos": [
+        "[RN-CAD-02] CPF com dígito verificador errado"
+      ]
+    },
+    {
+      "id": "res_multa_em_pedido_demissao",
+      "descricao": "Multa de 40% do FGTS também é calculada no pedido de demissão",
+      "risco": "Pagamento indevido de multa que só existe na dispensa sem justa causa",
+      "detectado": true,
+      "testes_que_falharam": null,
+      "exemplos": [
+        "[RN-RES-04] r10: Pedido de demissão: exatamente 15 dias no mês conta como avo"
+      ]
+    },
+    {
+      "id": "res_aviso_sem_3_dias_por_ano",
+      "descricao": "Aviso prévio indenizado fixo em 30 dias (ignora os 3 dias por ano de serviço)",
+      "risco": "Aviso prévio pago a menos para quem tem mais de 1 ano de casa",
+      "detectado": true,
+      "testes_que_falharam": null,
+      "exemplos": [
+        "[RN-RES-01] r01: Desligamento no dia 31: o mês comercial conta 30 dias"
+      ]
+    },
+    {
+      "id": "res_sem_projecao_aviso",
+      "descricao": "Avos de férias e 13º ignoram a projeção do aviso prévio indenizado",
+      "risco": "Férias proporcionais e 13º pagos a menos",
+      "detectado": true,
+      "testes_que_falharam": null,
+      "exemplos": [
+        "[RN-RES-01] r01: Desligamento no dia 31: o mês comercial conta 30 dias"
+      ]
+    },
+    {
+      "id": "res_inss_sobre_aviso",
+      "descricao": "INSS incide também sobre o aviso prévio indenizado",
+      "risco": "Desconto de INSS sobre verba indenizatória, que não sofre contribuição",
+      "detectado": true,
+      "testes_que_falharam": null,
+      "exemplos": [
+        "[RN-RES-01] r01: Desligamento no dia 31: o mês comercial conta 30 dias"
+      ]
+    },
+    {
+      "id": "res_avos_qualquer_dia",
+      "descricao": "Mês conta como avo com qualquer quantidade de dias (e não só com 15 ou mais)",
+      "risco": "Férias proporcionais e 13º pagos a mais",
+      "detectado": true,
+      "testes_que_falharam": null,
+      "exemplos": [
+        "[RN-RES-01] r01: Desligamento no dia 31: o mês comercial conta 30 dias"
+      ]
+    }
+  ],
+  "alteracoes_escondidas": [
+    {
+      "id": "mensal_fgts_truncado",
+      "descricao": "FGTS mensal passa a truncar os centavos em vez de arredondar meio para cima",
+      "percebida_pela_suite_de_tela": true,
+      "testes_que_falharam": null
+    }
+  ]
+}

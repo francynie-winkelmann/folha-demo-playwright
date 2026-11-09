@@ -1,0 +1,15 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+blob-report/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+reports/
+.stryker-tmp/
+.features-gen/
+site-dist/
+.vitest/
